@@ -1,4 +1,80 @@
-# Awesome OCR
+<!-- vscode-markdown-toc -->
+
+- 1. [Software](#Software)
+  - 1.1. [OCR engines](#OCRengines)
+  - 1.2. [Older and possibly abandoned OCR engines](#OlderandpossiblyabandonedOCRengines)
+  - 1.3. [OCR file formats](#OCRfileformats)
+    - 1.3.1. [hOCR](#hOCR)
+    - 1.3.2. [ALTO XML](#ALTOXML)
+    - 1.3.3. [TEI](#TEI)
+    - 1.3.4. [PAGE XML](#PAGEXML)
+  - 1.4. [OCR CLI](#OCRCLI)
+- 2. [Deskewing and Dewarping](#DeskewingandDewarping)
+  - 2.1. [OCR GUI](#OCRGUI)
+- 3. [Text detection and localization](#Textdetectionandlocalization)
+  - 3.1. [OCR Preprocessing](#OCRPreprocessing)
+- 4. [Segmentation](#Segmentation)
+  - 4.1. [Line Segmentation](#LineSegmentation)
+  - 4.2. [Character Segmentation](#CharacterSegmentation)
+  - 4.3. [Word Segmentation](#WordSegmentation)
+  - 4.4. [Document Segmentation](#DocumentSegmentation)
+  - 4.5. [Form Segmentation](#FormSegmentation)
+- 5. [Handwritten](#Handwritten)
+- 6. [Table detection](#Tabledetection)
+- 7. [Language detection](#Languagedetection)
+  - 7.1. [OCR as a Service](#OCRasaService)
+  - 7.2. [OCR evaluation](#OCRevaluation)
+  - 7.3. [OCR libraries by programming language](#OCRlibrariesbyprogramminglanguage)
+    - 7.3.1. [Crystal](#Crystal)
+    - 7.3.2. [Elixir](#Elixir)
+    - 7.3.3. [Go](#Go)
+    - 7.3.4. [Java](#Java)
+    - 7.3.5. [.Net](#Net)
+    - 7.3.6. [Object Pascal](#ObjectPascal)
+    - 7.3.7. [PHP](#PHP)
+    - 7.3.8. [Python](#Python)
+    - 7.3.9. [Javascript](#Javascript)
+    - 7.3.10. [Ruby](#Ruby)
+    - 7.3.11. [Rust](#Rust)
+    - 7.3.12. [R](#R)
+    - 7.3.13. [Swift](#Swift)
+  - 7.4. [OCR training tools](#OCRtrainingtools)
+- 8. [Datasets](#Datasets)
+  - 8.1. [Ground Truth](#GroundTruth)
+- 9. [Video Text Spotting](#VideoTextSpotting)
+- 10. [Font detection](#Fontdetection)
+- 11. [Optical Character Recognition Engines and Frameworks](#OpticalCharacterRecognitionEnginesandFrameworks)
+- 12. [Awesome lists](#Awesomelists)
+- 13. [Proprietary OCR Engines](#ProprietaryOCREngines)
+- 14. [Cloud based OCR Engines (SaaS)](#CloudbasedOCREnginesSaaS)
+- 15. [File formats and tools](#Fileformatsandtools)
+- 16. [Datasets](#Datasets-1)
+- 17. [Data augmentation and Synthetic data generation](#DataaugmentationandSyntheticdatageneration)
+- 18. [Pre OCR Processing](#PreOCRProcessing)
+- 19. [Post OCR Correction](#PostOCRCorrection)
+- 20. [Benchmarks](#Benchmarks)
+- 21. [misc](#misc)
+- 22. [Literature](#Literature)
+  - 22.1. [OCR-related publication and link lists](#OCR-relatedpublicationandlinklists)
+  - 22.2. [Blog Posts and Tutorials](#BlogPostsandTutorials)
+  - 22.3. [OCR Showcases](#OCRShowcases)
+  - 22.4. [Academic articles](#Academicarticles)
+    - 22.4.1. [2011 and before](#andbefore)
+    - 22.4.2. [2012](#)
+    - 22.4.3. [2013](#-1)
+    - 22.4.4. [2014](#-1)
+    - 22.4.5. [2015](#-1)
+    - 22.4.6. [2016](#-1)
+    - 22.4.7. [2017](#-1)
+    - 22.4.8. [2018](#-1)
+    - 22.4.9. [2019](#-1)
+    - 22.4.10. [2020](#-1)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># Awesome OCR
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
@@ -8,84 +84,9 @@ related to [Optical Character Recognition
 
 Contributions are welcome, as is feedback.
 
-<!-- BEGIN-MARKDOWN-TOC -->
+## 1. <a name='Software'></a>Software
 
-- [Awesome OCR](#awesome-ocr)
-  - [Software](#software)
-    - [OCR engines](#ocr-engines)
-    - [Older and possibly abandoned OCR engines](#older-and-possibly-abandoned-ocr-engines)
-    - [OCR file formats](#ocr-file-formats)
-      - [hOCR](#hocr)
-      - [ALTO XML](#alto-xml)
-      - [TEI](#tei)
-      - [PAGE XML](#page-xml)
-    - [OCR CLI](#ocr-cli)
-  - [Deskewing and Dewarping](#deskewing-and-dewarping)
-    - [OCR GUI](#ocr-gui)
-  - [Text detection and localization](#text-detection-and-localization)
-    - [OCR Preprocessing](#ocr-preprocessing)
-  - [Segmentation](#segmentation)
-    - [Line Segmentation](#line-segmentation)
-    - [Character Segmentation](#character-segmentation)
-    - [Word Segmentation](#word-segmentation)
-    - [Document Segmentation](#document-segmentation)
-    - [Form Segmentation](#form-segmentation)
-  - [Handwritten](#handwritten)
-  - [Table detection](#table-detection)
-  - [Language detection](#language-detection)
-    - [OCR as a Service](#ocr-as-a-service)
-    - [OCR evaluation](#ocr-evaluation)
-    - [OCR libraries by programming language](#ocr-libraries-by-programming-language)
-      - [Crystal](#crystal)
-      - [Elixir](#elixir)
-      - [Go](#go)
-      - [Java](#java)
-      - [.Net](#net)
-      - [Object Pascal](#object-pascal)
-      - [PHP](#php)
-      - [Python](#python)
-      - [Javascript](#javascript)
-      - [Ruby](#ruby)
-      - [Rust](#rust)
-      - [R](#r)
-      - [Swift](#swift)
-    - [OCR training tools](#ocr-training-tools)
-  - [Datasets](#datasets)
-    - [Ground Truth](#ground-truth)
-  - [Video Text Spotting](#video-text-spotting)
-  - [Font detection](#font-detection)
-  - [Optical Character Recognition Engines and Frameworks](#optical-character-recognition-engines-and-frameworks)
-  - [Awesome lists](#awesome-lists)
-  - [Proprietary OCR Engines](#proprietary-ocr-engines)
-  - [Cloud based OCR Engines (SaaS)](#cloud-based-ocr-engines-saas)
-  - [File formats and tools](#file-formats-and-tools)
-  - [Datasets](#datasets-1)
-  - [Data augmentation and Synthetic data generation](#data-augmentation-and-synthetic-data-generation)
-  - [Pre OCR Processing](#pre-ocr-processing)
-  - [Post OCR Correction](#post-ocr-correction)
-  - [Benchmarks](#benchmarks)
-  - [misc](#misc)
-  - [Literature](#literature)
-    - [OCR-related publication and link lists](#ocr-related-publication-and-link-lists)
-    - [Blog Posts and Tutorials](#blog-posts-and-tutorials)
-    - [OCR Showcases](#ocr-showcases)
-    - [Academic articles](#academic-articles)
-      - [2011 and before](#2011-and-before)
-      - [2012](#2012)
-      - [2013](#2013)
-      - [2014](#2014)
-      - [2015](#2015)
-      - [2016](#2016)
-      - [2017](#2017)
-      - [2018](#2018)
-      - [2019](#2019)
-      - [2020](#2020)
-
-<!-- END-MARKDOWN-TOC -->
-
-## Software
-
-### OCR engines
+### 1.1. <a name='OCRengines'></a>OCR engines
 
 - [tesseract](https://github.com/tesseract-ocr/tesseract) - The definitive Open Source OCR engine `Apache 2.0`
 - [EasyOCR](https://github.com/JaidedAI/EasyOCR) - OCR engine built on PyTorch by JaidedAI, `Apache 2.0`
@@ -102,7 +103,7 @@ Contributions are welcome, as is feedback.
 - [Calamari](https://github.com/Calamari-OCR/calamari) - OCR Engine based on OCRopy and Kraken
 - [doctr](https://github.com/mindee/doctr) - A seamless & high-performing OCR library powered by Deep Learning
 
-### Older and possibly abandoned OCR engines
+### 1.2. <a name='OlderandpossiblyabandonedOCRengines'></a>Older and possibly abandoned OCR engines
 
 - [Clara OCR](http://freecode.com/projects/claraocr/) - Open source OCR in C `GPL`
 - [Cuneiform](<https://en.wikipedia.org/wiki/CuneiForm_(software)>) - CuneiForm OCR was developed by Cognitive Technologies
@@ -113,12 +114,12 @@ Contributions are welcome, as is feedback.
 - [xplab](http://www.pattern-lab.de/) - A GTK 2 tool for pattern matching
 - [hebOCR](https://github.com/yaacov/hebocr) - Hebrew character recognition library (previously named hocr, see [Wikipedia article](https://de.wikipedia.org/wiki/HebOCR)) `GPL`
 
-### OCR file formats
+### 1.3. <a name='OCRfileformats'></a>OCR file formats
 
 - [abby2hocr.xslt XSLT script](https://gist.github.com/tfmorris/5977784)
 - [ocr-conversion-scripts](https://github.com/cneud/ocr-conversion-scripts)
 
-#### hOCR
+#### 1.3.1. <a name='hOCR'></a>hOCR
 
 - [hocr-tools](https://github.com/tmbdev/hocr-tools) - Tools for doing various useful things with hOCR files, `Apache 2.0`
 - [hocr-spec](https://github.com/kba/hocr-spec) - hOCR 1.2 specification
@@ -126,33 +127,33 @@ Contributions are welcome, as is feedback.
 - [hocr-parser](https://github.com/athento/hocr-parser) - hOCR Specification Python Parser
 - [hOCRTools](https://github.com/ONB-RD/hOCRTools) - hOCR to ALTO conversion XSLT
 
-#### ALTO XML
+#### 1.3.2. <a name='ALTOXML'></a>ALTO XML
 
 - [ALTO XML Schema](https://github.com/altoxml/schema) - XML Schema and development of the ALTO XML format
 - [ALTO XML Documentation](https://github.com/altoxml/documentation) - Documentation and use cases for ALTO
 - [alto-tools](https://github.com/cneud/alto-tools) - Various tools to work with ALTO files, Python
 - [AbbyyToAlto](https://github.com/ironymark/AbbyyToAlto) - PHP script converting from Abbyy 6 to ALTO XML
 
-#### TEI
+#### 1.3.3. <a name='TEI'></a>TEI
 
 - [TEI-OCR](https://github.com/OpenPhilology/tei-ocr) - TEI customization for OCR generated layout and content information
 - [TEI SIG on Libraries](http://www.tei-c.org/SIG/Libraries/teiinlibraries/main-driver.html) - Best Practices for TEI in Libraries
 - [GDZ](http://gdz.sub.uni-goettingen.de/uploads/media/GDZ_document_format_2005_12_08.pdf) - METS/TEI-based GDZ document format
 
-#### PAGE XML
+#### 1.3.4. <a name='PAGEXML'></a>PAGE XML
 
 - [PAGE-XML Schema](https://github.com/PRImA-Research-Lab/PAGE-XML/tree/master/pagecontent) - XML schema of the PAGE XML format along with documentation and examples
 - [omni:us Pages Format (OPF)](https://omni-us.github.io/pageformat/pagecontent_omnius.html) - XML schema very similar to PAGE XML that has some additional features.
 - [py-pagexml](https://github.com/omni-us/pagexml) - Python library for handling PAGE XML and OPF files.
 
-### OCR CLI
+### 1.4. <a name='OCRCLI'></a>OCR CLI
 
 - [OCRmyPDF](https://github.com/jbarlow83/OCRmyPDF) - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched
 - [Pdf2PdfOCR](https://github.com/LeoFCardoso/pdf2pdfocr) - A tool to OCR a PDF (or supported images) and add a text "layer" (a "pdf sandwich") in the original file making it a searchable PDF. GUI included. Tesseract and cuneiform supported.
 - [Ocrocis](https://github.com/kaumanns/ocrocis) - Project manager interface for Ocropy, see also [external project homepage](http://cistern.cis.lmu.de/ocrocis/)
 - [tesseract-recognize](https://github.com/mauvilsa/tesseract-recognize) - Tesseract-based tool that outputs result in Page XML format ([docker image](https://hub.docker.com/r/mauvilsa/tesseract-recognize)).
 
-## Deskewing and Dewarping
+## 2. <a name='DeskewingandDewarping'></a>Deskewing and Dewarping
 
 - [MORAN_v2](https://github.com/Canjie-Luo/MORAN_v2) ([paper:2019](https://arxiv.org/abs/1901.03003)) - A Multi-Object Rectified Attention Network for Scene Text Recognition
 - [thomasjhaung/deep-learning-for-document-dewarping](https://github.com/thomasjhuang/deep-learning-for-document-dewarping)
@@ -171,7 +172,7 @@ Contributions are welcome, as is feedback.
 - [DewarpNet](https://github.com/cvlab-stonybrook/DewarpNet)
 -
 
-### OCR GUI
+### 2.1. <a name='OCRGUI'></a>OCR GUI
 
 - [moz-hocr-editor](https://github.com/garrison/moz-hocr-edit) - Firefox Addon for editing hOCR files **Discontinued**
 - [qt-box-editor](https://github.com/zdenop/qt-box-editor) - QT4 editor of tesseract-ocr box files.
@@ -187,7 +188,7 @@ Contributions are welcome, as is feedback.
 - [archiscribe](https://github.com/jbaiter/archiscribe) - Web application for transcribing OCR ground truth from Archive.org. Deployed instance available at https://archiscribe.jbaiter.de/, results are available in [@jbaiter/archiscribe-corpus](https://github.com/jbaiter/archiscribe-corpus).
 - [nw-page-editor](https://github.com/mauvilsa/nw-page-editor) - Simple app for visual editing of Page XML files. Provides desktop and [server docker-based](https://hub.docker.com/r/mauvilsa/nw-page-editor-web) versions.
 
-## Text detection and localization
+## 3. <a name='Textdetectionandlocalization'></a>Text detection and localization
 
 - [DB](https://github.com/MhLiao/DB)
 - [DeepReg](https://github.com/DeepRegNet/DeepReg)
@@ -246,7 +247,7 @@ Contributions are welcome, as is feedback.
 - [ReceiptParser](https://github.com/ReceiptManager/receipt-parser) - A fuzzy receipt parser written in Python.
 - [vedastr](https://github.com/Media-Smart/vedastr)
 
-### OCR Preprocessing
+### 3.1. <a name='OCRPreprocessing'></a>OCR Preprocessing
 
 - [NoiseRemove.java in MathOCR](https://github.com/chungkwong/MathOCR/blob/master/src/main/java/com/github/chungkwong/mathocr/preprocess/NoiseRemove.java) - Java implementation of Adaptive degraded document image binarization by B. Gatos , I. Pratikakis, S.J. Perantonis
 - [binarize.c in ZBar](https://github.com/ZBar/ZBar/blob/master/zbar/qrcode/binarize.c) - C implementations of two binarization algorithms, based on Sauvola
@@ -257,24 +258,24 @@ Contributions are welcome, as is feedback.
 - Fred's ImageMagick script [textcleaner](http://www.fmwconcepts.com/imagemagick/textcleaner/index.php) - Processes a scanned document of text to clean the text background
 - [localcontrast](https://sourceforge.net/projects/localcontrast/) - Fast O(1) local contrast optimization
 
-## Segmentation
+## 4. <a name='Segmentation'></a>Segmentation
 
-### Line Segmentation
+### 4.1. <a name='LineSegmentation'></a>Line Segmentation
 
 - [ARU-Net](https://github.com/TobiasGruening/ARU-Net) - Deep Learning Chinese Word Segment
 - [sbb_textline_detector](https://github.com/qurator-spk/sbb_textline_detector)
 
-### Character Segmentation
+### 4.2. <a name='CharacterSegmentation'></a>Character Segmentation
 
 - [watersink/Character-Segmentation](https://github.com/watersink/Character-Segmentation)
 - [sharatsawhney/character_segmentation](https://github.com/sharatsawhney/character_segmentation)
 
-### Word Segmentation
+### 4.3. <a name='WordSegmentation'></a>Word Segmentation
 
 - [githubharald/WordSegmentation](https://github.com/githubharald/WordSegmentation)
 - [kcws](https://github.com/koth/kcws)
 
-### Document Segmentation
+### 4.4. <a name='DocumentSegmentation'></a>Document Segmentation
 
 - [LayoutParser](https://layout-parser.github.io)
 - [eynollah](https://github.com/qurator-spk/eynollah)
@@ -295,11 +296,11 @@ Contributions are welcome, as is feedback.
 - [LayoutLMv2](https://github.com/microsoft/unilm/tree/master/layoutlmv2)
 - [eynollah](https://github.com/qurator-spk/eynollah)
 
-### Form Segmentation
+### 4.5. <a name='FormSegmentation'></a>Form Segmentation
 
 - https://github.com/doxakis/form-segmentation
 
-## Handwritten
+## 5. <a name='Handwritten'></a>Handwritten
 
 - https://github.com/arthurflor23/handwritten-text-recognition
 - https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet
@@ -313,7 +314,7 @@ Contributions are welcome, as is feedback.
 - https://github.com/sushant097/Handwritten-Line-Text-Recognition-using-Deep-Learning-with-Tensorflow
 - https://github.com/qurator-spk/sbb_textline_detection
 
-## Table detection
+## 6. <a name='Tabledetection'></a>Table detection
 
 - [TableNet](https://github.com/jainammm/TableNet) - Unofficial implementation of ICDAR 2019 paper : TableNet: Deep Learning model for end-to-end Table detection and Tabular data extraction from Scanned Document Images.
 - [image-table-ocr](https://github.com/eihli/image-table-ocr)
@@ -326,14 +327,14 @@ Contributions are welcome, as is feedback.
 - [ExtractTable-py](https://github.com/ExtractTable/ExtractTable-py)
 - [image-table-ocr](https://github.com/eihli/image-table-ocr)
 
-## Language detection
+## 7. <a name='Languagedetection'></a>Language detection
 
 - [lingua](https://github.com/pemistahl/lingua) - The most accurate natural language detection library for Java and other JVM languages, suitable for long and short text alike
 - [langdetect](https://pypi.org/project/langdetect/)
 - [whatthelang](https://github.com/indix/whatthelang) - Lightning Fast Language Prediction rocket
 - [wiki-lang-detect](https://github.com/vseloved/wiki-lang-detect)
 
-### OCR as a Service
+### 7.1. <a name='OCRasaService'></a>OCR as a Service
 
 - [Open OCR](https://github.com/tleyden/open-ocr) - Run Tesseract in Docker containers
 - [tesseract-web-service](https://github.com/guitarmind/tesseract-web-service) - An implementation of RESTful web service for tesseract-OCR using tornado.
@@ -348,7 +349,7 @@ Contributions are welcome, as is feedback.
 - [ocr.space](https://ocr.space/) - Free Online OCR and OCR API by [@a9t9](https://github.com/A9T9) based on Tesseract (code is not open)
 - [OCR4all](https://github.com/OCR4all/OCR4all) - Provides OCR services through web applications. Included Projects: [LAREX](https://github.com/chreul/LAREX), [OCRopus](https://github.com/tmbdev/ocropy), [calamari](https://github.com/ChWick/calamari) and [nashi](https://github.com/andbue/nashi).
 
-### OCR evaluation
+### 7.2. <a name='OCRevaluation'></a>OCR evaluation
 
 - [ISRI OCR Evaluation Tools](https://code.google.com/archive/p/isri-ocr-evaluation-tools/) with a [User Guide from 1996 :!:](https://github.com/eddieantonio/isri-ocr-evaluation-tools/blob/HEAD/user-guide.pdf)
   - [isri-ocr-evaluation-tools](https://github.com/eddieantonio/isri-ocr-evaluation-tools) - further development by [@eddieantonio](https://github.com/eddieantonio) (2015, 2016)
@@ -357,45 +358,45 @@ Contributions are welcome, as is feedback.
 - [ngram-ocr-eval](https://github.com/impactcentre/hackathon2014/tree/master/ngram-ocr-eval) - Brute and simple OCR evaluation using ngrams
 - [quack](https://github.com/tokee/quack) - Quality-Assurance-tool for scans with corresponding ALTO-files
 
-### OCR libraries by programming language
+### 7.3. <a name='OCRlibrariesbyprogramminglanguage'></a>OCR libraries by programming language
 
-#### Crystal
+#### 7.3.1. <a name='Crystal'></a>Crystal
 
 - [tesseract-ocr](https://github.com/dannnylo/tesseract-ocr-crystal) - A Crystal wrapper for tesseract-ocr.
 
-#### Elixir
+#### 7.3.2. <a name='Elixir'></a>Elixir
 
 - [tesseract_ocr](https://github.com/dannnylo/tesseract-ocr-elixir) - Elixir library wrapping the tesseract executable.
 
-#### Go
+#### 7.3.3. <a name='Go'></a>Go
 
 - [gosseract](https://github.com/otiai10/gosseract) - Golang OCR library, wrapping Tesseract-ocr.
 
-#### Java
+#### 7.3.4. <a name='Java'></a>Java
 
 - [Tess4J](https://github.com/nguyenq/tess4j) - Java Native Access bindings to Tesseract.
 - [tess-two](https://github.com/rmtheis/tess-two) - Tools for compiling Tesseract on Android and Java API.
 
-#### .Net
+#### 7.3.5. <a name='Net'></a>.Net
 
 - [tesseract for .net](https://github.com/charlesw/tesseract) - A .Net wrapper for tesseract-ocr.
 
-#### Object Pascal
+#### 7.3.6. <a name='ObjectPascal'></a>Object Pascal
 
 - [TTesseractOCR4](https://github.com/r1me/TTesseractOCR4) - Object Pascal binding for tesseract-ocr 4.x.
 
-#### PHP
+#### 7.3.7. <a name='PHP'></a>PHP
 
 - [Tesseract OCR for PHP](https://github.com/thiagoalessio/tesseract-ocr-for-php) - Tesseract PHP bindings.
 
-#### Python
+#### 7.3.8. <a name='Python'></a>Python
 
 - [pytesseract](https://github.com/madmaze/pytesseract) - A Python wrapper for Google Tesseract.
 - [pyocr](https://github.com/jflesch/pyocr) - A Python wrapper for Tesseract and Cuneiform.
 - [ocrodjvu](https://github.com/jwilk/ocrodjvu) - A library and standalone tool for doing OCR on DjVu documents, wrapping Cuneiform, gocr, ocrad, ocropus and tesseract
 - [tesserocr](https://github.com/sirfz/tesserocr) - A Python wrapper for the tesseract-ocr API
 
-#### Javascript
+#### 7.3.9. <a name='Javascript'></a>Javascript
 
 - [ocracy](https://github.com/naptha/ocracy) - pure javascript lstm rnn implementation based on ocropus
 - [gocr.js](https://github.com/antimatter15/gocr.js) - Javascript port (emscripten) of gocr
@@ -404,34 +405,34 @@ Contributions are welcome, as is feedback.
 - [node-tesseract-ocr](https://github.com/zapolnoch/node-tesseract-ocr) - A simple wrapper for the Tesseract OCR package.
 - [node-tesseract-native](https://github.com/mdelete/node-tesseract-native) - C++ module for node providing OCR with tesseract and leptonica.
 
-#### Ruby
+#### 7.3.10. <a name='Ruby'></a>Ruby
 
 - [rtesseract](https://github.com/dannnylo/rtesseract) - Ruby library wrapping the tesseract and imagemagick executables.
 - [ruby-tesseract](https://github.com/meh/ruby-tesseract-ocr) - Native Tesseract bindings for Ruby MRI and JRuby
 - [ocr_space](https://github.com/suyesh/ocr_space) - API wrapper for free ocr service ocr.space. Includes CLI
 
-#### Rust
+#### 7.3.11. <a name='Rust'></a>Rust
 
 - [tesseract.rs](https://github.com/antimatter15/tesseract-rs) - Rust bindings for tesseract OCR.
 - [leptess](https://crates.io/crates/leptess) - Productive and safe Rust bindings/wrappers for tesseract and leptonica.
 
-#### R
+#### 7.3.12. <a name='R'></a>R
 
 - [tesseract](https://github.com/ropensci/tesseract) - R bindings for tesseract OCR.
 
-#### Swift
+#### 7.3.13. <a name='Swift'></a>Swift
 
 - [Tesseract OCR iOS](https://github.com/gali8/Tesseract-OCR-iOS) - Swift and Objective-C wrapper for Tesseract OCR.
 - [SwiftOCR](https://github.com/garnele007/SwiftOCR) - Fast and simple OCR library written in Swift. Optimized for recognizing short, one line long alphanumeric codes.
 
-### OCR training tools
+### 7.4. <a name='OCRtrainingtools'></a>OCR training tools
 
 - [glyph-miner](https://github.com/benedikt-budig/glyph-miner) - A system for extracting glyphs from early typeset prints
 - [ocrodeg](https://github.com/NVlabs/ocrodeg) - Document image degradation for OCR data augmentation
 
-## Datasets
+## 8. <a name='Datasets'></a>Datasets
 
-### Ground Truth
+### 8.1. <a name='GroundTruth'></a>Ground Truth
 
 - [archiscribe-corpus](https://github.com/jbaiter/archiscribe-corpus) - >4,200 lines transcribed from 19th Century German prints via [archiscribe](https://archiscribe.jbaiter.de/) `CC-BY 4.0`
 - [CIS OCR Test Set](https://github.com/cisocrgroup/Resources/tree/master/ocrtestset) - 2 example documents each in German/Latin/Greek with ground truth for [PoCoTo](https://github.com/cisocrgroup/PoCoTo)
@@ -469,17 +470,17 @@ Contributions are welcome, as is feedback.
 - [RODRIGO](https://www.prhlt.upv.es/wp/resource/the-rodrigo-corpus) - 853 Spanish manuscript pages, (free) [registration](https://www.prhlt.upv.es/wp/resource/the-rodrigo-corpus) required `non-commercial use only`
 - [Toebler-OCR](https://github.com/PonteIneptique/toebler-ocr) - (Kraken) Ground Truth transcription of few pages of the Tobler-Lommatzsch: Altfranzösisches Wörterbuch
 
-## Video Text Spotting
+## 9. <a name='VideoTextSpotting'></a>Video Text Spotting
 
 - [VideoTextSCM](https://github.com/lsabrinax/VideoTextSCM)
 - [TransDETR](https://github.com/weijiawu/TransDETR)
 - [YORO](https://github.com/hikopensource/DAVAR-Lab-OCR/tree/main/demo/videotext/yoro) ([paper:2021](https://arxiv.org/pdf/1903.03299.pdf))
 
-## Font detection
+## 10. <a name='Fontdetection'></a>Font detection
 
 - [typefont](https://github.com/Vasile-Peste/Typefont) - The first open-source library that detects the font of a text in a image.
 
-## Optical Character Recognition Engines and Frameworks
+## 11. <a name='OpticalCharacterRecognitionEnginesandFrameworks'></a>Optical Character Recognition Engines and Frameworks
 
 - [DAVAR-lab-OCR](https://github.com/hikopensource/davar-lab-ocr)
 - [CRNN.tf2](https://github.com/FLming/CRNN.tf2)
@@ -546,7 +547,7 @@ Contributions are welcome, as is feedback.
 - [invoice-scanner-react-native](https://github.com/burhanuday/invoice-scanner-react-native)
 - [Arabic-OCR](https://github.com/HusseinYoussef/Arabic-OCR)
 
-## Awesome lists
+## 12. <a name='Awesomelists'></a>Awesome lists
 
 - https://github.com/whitelok/image-text-localization-recognition
 - [Awesome-Scene-Text-Recognition](https://github.com/chongyangtao/Awesome-Scene-Text-Recognition) -
@@ -569,14 +570,14 @@ Contributions are welcome, as is feedback.
 - https://github.com/soumendra/awesome-ocr
 - [chongyangtao/Awesome-Scene-Text-Recognition](https://github.com/chongyangtao/Awesome-Scene-Text-Recognition) - Papers and datasets
 
-## Proprietary OCR Engines
+## 13. <a name='ProprietaryOCREngines'></a>Proprietary OCR Engines
 
 - [ABBYY](https://www.abbyy.com/en-us/)
 - [Omnipage](https://www.nuance.com/print-capture-and-pdf-solutions.html)
 - [Clova.ai](https://demo.ocr.clova.ai/)
 - [Konfuzio](https://konfuzio.com/en/)
 
-## Cloud based OCR Engines (SaaS)
+## 14. <a name='CloudbasedOCREnginesSaaS'></a>Cloud based OCR Engines (SaaS)
 
 - [thehive.ai](https://thehive.ai/hive-ocr-solutions)
 - [impira](https://www.impira.com/try/smarter-ocr)
@@ -586,7 +587,7 @@ Contributions are welcome, as is feedback.
 - [ocrolus](https://www.ocrolus.com/)
 - [Butler Labs](https://www.butlerlabs.ai/)
 
-## File formats and tools
+## 15. <a name='Fileformatsandtools'></a>File formats and tools
 
 - [nw-page-editor](https://github.com/mauvilsa/nw-page-editor) - Simple app for visual editing of Page XML files
 - [hocr](http://kba.cloud/hocr-spec/1.2/)
@@ -595,7 +596,7 @@ Contributions are welcome, as is feedback.
 - [ocr-fileformat](https://github.com/UB-Mannheim/ocr-fileformat) - Validate and transform various OCR file formats
 - [hocr-tools](https://github.com/tmbdev/hocr-tools) - Tools for manipulating and evaluating the hOCR format for representing multi-lingual OCR results by embedding them into HTML.
 
-## Datasets
+## 16. <a name='Datasets-1'></a>Datasets
 
 - http://www.iapr-tc11.org/mediawiki/index.php/Datasets_List
 - https://icdar2019.org/competitions-2/
@@ -609,7 +610,7 @@ Contributions are welcome, as is feedback.
 - [Total-Text-Dataset](https://github.com/cs-chan/Total-Text-Dataset)
 - [ocr-open-dataset](https://github.com/xylcbd/ocr-open-dataset)
 
-## Data augmentation and Synthetic data generation
+## 17. <a name='DataaugmentationandSyntheticdatageneration'></a>Data augmentation and Synthetic data generation
 
 - [DocCreator](http://doc-creator.labri.fr/) - DIAR software for synthetic document image and groundtruth generation, with various degradation models for data augmentation.
 - [Scene-Text-Image-Transformer](https://github.com/Canjie-Luo/Scene-Text-Image-Transformer) - Scene Text Image Transformer
@@ -620,26 +621,26 @@ Contributions are welcome, as is feedback.
 - [UnrealText](https://github.com/Jyouhou/UnrealText)
 - [SynthText_Chinese_version](https://github.com/JarveeLee/SynthText_Chinese_version)
 
-## Pre OCR Processing
+## 18. <a name='PreOCRProcessing'></a>Pre OCR Processing
 
 - [ajgalleo/document-image-binarization](https://github.com/ajgallego/document-image-binarization)
 - [PRLib](https://github.com/leha-bot/PRLib) - Pre-Recognize Library - library with algorithms for improving OCR quality.
 - [sbb_binarization](https://github.com/qurator-spk/sbb_binarization) -
 
-## Post OCR Correction
+## 19. <a name='PostOCRCorrection'></a>Post OCR Correction
 
 - [KBNLresearch/ochre](https://github.com/KBNLresearch/ochre) - Toolbox for OCR post-correction
 - [cisocrgroup/PoCoTo](https://github.com/cisocrgroup/PoCoTo) - The CIS OCR PostCorrectionTool
 - [afterscan](http://www.afterscan.com/)
 
-## Benchmarks
+## 20. <a name='Benchmarks'></a>Benchmarks
 
 - [TedEval](https://github.com/clovaai/TedEval)
 - [clovaai/deep-text-recognition-benchmark](https://github.com/clovaai/deep-text-recognition-benchmark) - Text recognition (optical character recognition) with deep learning methods.
 - [dinglehopper](https://github.com/qurator-spk/dinglehopper) - dinglehopper is an OCR evaluation tool and reads ALTO, PAGE and text files.
 - [CLEval](https://github.com/clovaai/CLEval)
 
-## misc
+## 21. <a name='misc'></a>misc
 
 - [ocrodeg](https://github.com/NVlabs/ocrodeg) - a small Python library implementing document image degradation for data augmentation for handwriting recognition and OCR applications.
 - [scantailor](https://github.com/scantailor/scantailor) - Scan Tailor is an interactive post-processing tool for scanned pages.
@@ -655,9 +656,9 @@ Contributions are welcome, as is feedback.
 - https://github.com/MaybeShewill-CV/CRNN_Tensorflow
 - [OCRmyPDF](https://github.com/jbarlow83/OCRmyPDF)
 
-## Literature
+## 22. <a name='Literature'></a>Literature
 
-### OCR-related publication and link lists
+### 22.1. <a name='OCR-relatedpublicationandlinklists'></a>OCR-related publication and link lists
 
 - [IMPACT: Tools for text digitisation](http://www.digitisation.eu/tools-resources/tools-for-text-digitisation/) - List of tools software projects related, some related to OCR
 - [OCR-D](https://www.zotero.org/groups/ocr-d) - List of OCR-related academic articles in the context of the [OCR-D](http://www.ocr-d.de/) project. :de:
@@ -667,7 +668,7 @@ Contributions are welcome, as is feedback.
 - [OCR [and Deep Learning]](http://handong1587.github.io/deep_learning/2015/10/09/ocr.html) by [@handong1587](https://github.com/handong1587/)
 - [Ocropus Wiki: Publications](https://github.com/tmbdev/ocropy/wiki/Publications)
 
-### Blog Posts and Tutorials
+### 22.2. <a name='BlogPostsandTutorials'></a>Blog Posts and Tutorials
 
 - [Tesseract Blends Old and New OCR Technology](https://github.com/tesseract-ocr/docs/tree/master/das_tutorial2016) (2016) [@theraysmith](https://github.com/theraysmith)
   - Tutorial@DAS2016, Updated "What You Always Wanted to Know" slides
@@ -701,37 +702,37 @@ Contributions are welcome, as is feedback.
 - [A gentle introduction to OCR](https://towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa) (2018) [@shgidi](https://github.com/shgidi)
 - [Worauf kann ich mich verlassen? Arbeiten mit digitalisierten Quellen, Teil 1: OCR](https://blog.ub.unibas.ch/2019/06/04/worauf-kann-ich-mich-verlassen-arbeiten-mit-digitalisierten-quellen-teil-1-ocr/) (2019) [@eliaskreyenbuehl](https://github.com/eliaskreyenbuehl) :de: A reflection/criticism on OCR quality, OCR pitfalls in Fraktur fonts.
 
-### OCR Showcases
+### 22.3. <a name='OCRShowcases'></a>OCR Showcases
 
 - [abbyy-finereader-ocr-senate](https://github.com/dannguyen/abbyy-finereader-ocr-senate) - Using OCR to parse scanned Senate Financial Disclosure forms.
 - [cvOCR](https://github.com/Halfish/cvOCR) - An OCR system for recognizing resume or cv text, implemented in Python and C and based on tesseract
 - [MathOCR](https://github.com/chungkwong/MathOCR) - A printed scientific document recognition system, **pre-alpha**
 
-### Academic articles
+### 22.4. <a name='Academicarticles'></a>Academic articles
 
-#### 2011 and before
+#### 22.4.1. <a name='andbefore'></a>2011 and before
 
 - [High performance document layout analysis](http://www.dfki.de/web/research/publications/renameFileForDownload?filename=HighPerfDocLayoutAna.pdf&file_id=uploads_552) (2003) Breuel
 - [Adaptive degraded document image binarization](http://doai.io/10.1016/j.patcog.2005.09.010) (2006) Gatos, Pratikakis, Perantonis
 - [[Internship Report]](http://www.madm.eu/_media/theses/ocropusgupta.pdf) (2007) Gupta
 - [OCRopus Addons (Internship Report)](http://madm.dfki.de/_media/theses/ocropusdantrey.pdf) (2007) Dantrey
 
-#### 2012
+#### 22.4.2. <a name=''></a>2012
 
 - [Local Logistic Classifiers for Large Scale Learning](http://www.academia.edu/2959462/Local_Logistic_Classifiers_for_Large_Scale_Learning) (2012) Yousefi, Breuel
 
-#### 2013
+#### 22.4.3. <a name='-1'></a>2013
 
 - [High Performance OCR for Printed English and Fraktur using LSTM Networks](http://staffhome.ecm.uwa.edu.au/~00082689/papers/Breuel-LSTM-OCR-ICDAR13.pdf) (2013) Breuel, Ul-Hasan, Mayce Al Azawi. Shafait
 - [Can we build language-independent OCR using LSTM networks?](https://www.researchgate.net/publication/260341307_Can_we_build_language-independent_OCR_using_LSTM_networks) (2013) Ul-Hasan, Breuel
 - [Offline Printed Urdu Nastaleeq Script Recognition with Bidirectional LSTM Networks](http://staffhome.ecm.uwa.edu.au/~00082689/papers/Adnan-Urdu-OCR-ICDAR13.pdf) (2013) Ul-Hasan, Ahmed, Rashid, Shafait, Breuel
 
-#### 2014
+#### 22.4.4. <a name='-1'></a>2014
 
 - [OCR of historical printings of Latin texts: Problems, Prospects, Progress.](http://www.springmann.net/papers/2014-04-07-DATeCH2014-springmann.pdf) (2014) Springmann, Najock, Morgenroth, Schmid, Gotscharek, Fink
 - [Correcting Noisy OCR: Context beats Confusion](http://dx.doi.org/10.1145/2595188.2595200) (2014) Evershed, Fitch
 
-#### 2015
+#### 22.4.5. <a name='-1'></a>2015
 
 - [TypeWright: An Experiment in Participatory Curation](http://www.digitalhumanities.org/dhq/vol/9/4/000220/000220.html) (2015) Bilansky
   - On crowd-sourcing OCR postcorrection
@@ -740,7 +741,7 @@ Contributions are welcome, as is feedback.
 - [A Segmentation-Free Approach for Printed Devanagari Script Recognition](https://www.researchgate.net/publication/280777081_A_Segmentation-Free_Approach_for_Printed_Devanagari_Script_Recognition) (2015) Karayil, Ul-Hasan, Breuel
 - [A Sequence Learning Approach for Multiple Script Identification](https://www.researchgate.net/publication/280777013_A_Sequence_Learning_Approach_for_Multiple_Script_Identification) (2015) Ul-Hasan, Afzal, Shfait, Liwicki, Breuel
 
-#### 2016
+#### 22.4.6. <a name='-1'></a>2016
 
 - [Important New Developments in Arabographic Optical Character Recognition (OCR)](https://arxiv.org/abs/1703.09550) (2016) Romanov, Miller, Savant, Kiessling
   - on [kraken](#ocr-engines)
@@ -761,7 +762,7 @@ Contributions are welcome, as is feedback.
 - [shinjayne/textboxes](https://github.com/shinjayne/textboxes) - Textboxes implementation with Tensorflow (python)
 - [shinTB](https://github.com/shinjayne/shinTB) - Textboxes : Image Text Detection Model : python package (tensorflow)
 
-#### 2017
+#### 22.4.7. <a name='-1'></a>2017
 
 - [Telugu OCR Framework using Deep Learning](https://arxiv.org/abs/1509.05962) (2015/2017) [Achanta](https://github.com/rakeshvar), Hastie
   - see also [TeluguOCR](https://github.com/TeluguOCR), [banti_telugu_ocr](https://github.com/TeluguOCR/banti_telugu_ocr), [chamanti_ocr](https://github.com/rakeshvar/chamanti_ocr), [#49](https://github.com/kba/awesome-ocr/issues/49)
@@ -775,7 +776,7 @@ Contributions are welcome, as is feedback.
 - [EAST-Detector-for-text-detection-using-OpenCV](https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV) - Text Detection from images using OpenCV
 - [easy-EAST](https://github.com/che220/easy-EAST)
 
-#### 2018
+#### 22.4.8. <a name='-1'></a>2018
 
 - [A Two-Stage Method for Text Line Detection in Historical Documents](https://arxiv.org/abs/1802.03345) (2018) [Grüning](https://github.com/TobiasGruening), Leifert, Strauß, Labahn. Code available at https://github.com/TobiasGruening/ARU-Net
 - [tensorflow_PSENet](https://github.com/liuheng92/tensorflow_PSENet) - This is a tensorflow re-implementation of PSENet: Shape Robust Text Detection with Progressive Scale Expansion Network
@@ -788,7 +789,7 @@ Contributions are welcome, as is feedback.
 - [TextBoxes_plusplus (offical)](https://github.com/MhLiao/TextBoxes_plusplus) TextBoxes++: A Single-Shot Oriented Scene Text Detector
 - [Shun14/TextBoxes_plusplus_Tensorflo](https://github.com/Shun14/TextBoxes_plusplus_Tensorflow) - Textboxes_plusplus implementation with Tensorflow (python)
 
-#### 2019
+#### 22.4.9. <a name='-1'></a>2019
 
 - RAFT [paper:2019](https://arxiv.org/pdf/1904.01941.pdf)
 - [CRAFT-pytorch (official)](https://github.com/clovaai/CRAFT-pytorch) - Pytorch implementation of CRAFT text detector.
@@ -800,7 +801,7 @@ Contributions are welcome, as is feedback.
 - [faustomorales/keras-ocr](https://github.com/faustomorales/keras-ocr) - A packaged and flexible version of the CRAFT text detector and Keras CRNN recognition model.
 - [fcakyon/craft-text-detector](https://github.com/fcakyon/craft-text-detector)
 
-#### 2020
+#### 22.4.10. <a name='-1'></a>2020
 
 - ABCNet [paper:2020](https://arxiv.org/pdf/2002.10200.pdf)
 - [AdelaiDet](https://github.com/aim-uofa/AdelaiDet)
